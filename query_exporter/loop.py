@@ -161,6 +161,7 @@ class QueryLoop:
         if value is None:
             # don't fail is queries that count return NULL
             value = 0.0
+        value = float(value)
         method = self._METRIC_METHODS[self._metric_configs[name].type]
         all_labels = {DATABASE_LABEL: dbname}
         if labels:
